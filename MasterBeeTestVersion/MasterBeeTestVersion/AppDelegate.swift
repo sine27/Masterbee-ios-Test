@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let path = Bundle.main.path(forResource: "Sample_Stock_Response", ofType: "json")
         {
             let jsonData = NSData(contentsOfFile: path)
-            print(jsonData)
             let json = try! JSONSerialization.jsonObject(with: jsonData as! Data, options: []) as! NSDictionary
-            print(json)
         }
 
         return true

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		255386041E7224D4007182F7 /* Sample_Stock_Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 255386031E7224D4007182F7 /* Sample_Stock_Response.json */; };
 		255386061E7225E1007182F7 /* MBMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255386051E7225E1007182F7 /* MBMenuViewController.swift */; };
+		255386081E722C17007182F7 /* MBOrderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255386071E722C17007182F7 /* MBOrderTypeViewController.swift */; };
+		2553860B1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255386091E723BAB007182F7 /* TimeSpanHeaderTableViewCell.swift */; };
+		2553860C1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553860A1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.xib */; };
+		2553860F1E723D4B007182F7 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553860D1E723D4B007182F7 /* LocationTableViewCell.swift */; };
+		255386101E723D4B007182F7 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553860E1E723D4B007182F7 /* LocationTableViewCell.xib */; };
 		2591FADC1E70CF4900AC3868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2591FADB1E70CF4900AC3868 /* AppDelegate.swift */; };
 		2591FAE11E70CF4900AC3868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2591FADF1E70CF4900AC3868 /* Main.storyboard */; };
 		2591FAE31E70CF4900AC3868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2591FAE21E70CF4900AC3868 /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		253A614325351E5F676E61C3 /* Pods_MasterBeeTestVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterBeeTestVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		255386031E7224D4007182F7 /* Sample_Stock_Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sample_Stock_Response.json; sourceTree = "<group>"; };
 		255386051E7225E1007182F7 /* MBMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBMenuViewController.swift; path = ViewController/MBMenuViewController.swift; sourceTree = "<group>"; };
+		255386071E722C17007182F7 /* MBOrderTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBOrderTypeViewController.swift; path = ViewController/MBOrderTypeViewController.swift; sourceTree = "<group>"; };
+		255386091E723BAB007182F7 /* TimeSpanHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeSpanHeaderTableViewCell.swift; path = View/TimeSpanHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		2553860A1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimeSpanHeaderTableViewCell.xib; path = View/TimeSpanHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		2553860D1E723D4B007182F7 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		2553860E1E723D4B007182F7 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		2591FAD81E70CF4900AC3868 /* MasterBeeTestVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterBeeTestVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2591FADB1E70CF4900AC3868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2591FAE01E70CF4900AC3868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,13 +136,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		255386021E721C1E007182F7 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
 		2591FACF1E70CF4900AC3868 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +161,6 @@
 		2591FADA1E70CF4900AC3868 /* MasterBeeTestVersion */ = {
 			isa = PBXGroup;
 			children = (
-				255386021E721C1E007182F7 /* Extension */,
 				2591FB121E70E31200AC3868 /* Client */,
 				2591FB0D1E70CFC300AC3868 /* StoryBoard */,
 				2591FB0C1E70CFB900AC3868 /* Default */,
@@ -190,6 +192,8 @@
 		2591FB091E70CF5C00AC3868 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				255386091E723BAB007182F7 /* TimeSpanHeaderTableViewCell.swift */,
+				2553860D1E723D4B007182F7 /* LocationTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -201,6 +205,7 @@
 				2591FB171E70EC2700AC3868 /* MBLoginTableViewController.swift */,
 				2591FB1B1E70EC6300AC3868 /* MBRegisterTableViewController.swift */,
 				255386051E7225E1007182F7 /* MBMenuViewController.swift */,
+				255386071E722C17007182F7 /* MBOrderTypeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -230,6 +235,8 @@
 				2591FADF1E70CF4900AC3868 /* Main.storyboard */,
 				2591FB1D1E70EF7100AC3868 /* Account.storyboard */,
 				2591FAE41E70CF4900AC3868 /* LaunchScreen.storyboard */,
+				2553860A1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.xib */,
+				2553860E1E723D4B007182F7 /* LocationTableViewCell.xib */,
 			);
 			name = StoryBoard;
 			sourceTree = "<group>";
@@ -363,9 +370,11 @@
 			files = (
 				2591FAE61E70CF4900AC3868 /* LaunchScreen.storyboard in Resources */,
 				2591FAE31E70CF4900AC3868 /* Assets.xcassets in Resources */,
+				255386101E723D4B007182F7 /* LocationTableViewCell.xib in Resources */,
 				2591FB1E1E70EF7100AC3868 /* Account.storyboard in Resources */,
 				2591FAE11E70CF4900AC3868 /* Main.storyboard in Resources */,
 				255386041E7224D4007182F7 /* Sample_Stock_Response.json in Resources */,
+				2553860C1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +543,10 @@
 				2591FB161E70EA9400AC3868 /* MBWelcomViewController.swift in Sources */,
 				255386061E7225E1007182F7 /* MBMenuViewController.swift in Sources */,
 				2591FB181E70EC2700AC3868 /* MBLoginTableViewController.swift in Sources */,
+				2553860F1E723D4B007182F7 /* LocationTableViewCell.swift in Sources */,
+				255386081E722C17007182F7 /* MBOrderTypeViewController.swift in Sources */,
 				2591FB141E70E34200AC3868 /* MasterBeeClient.swift in Sources */,
+				2553860B1E723BAB007182F7 /* TimeSpanHeaderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
