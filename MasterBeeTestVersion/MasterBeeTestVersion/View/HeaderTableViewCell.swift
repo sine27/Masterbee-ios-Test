@@ -8,13 +8,17 @@
 
 import UIKit
 
-class TimeSpanHeaderTableViewCell: UITableViewCell {
+class HeaderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timeSpanLabel: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        cellLabel.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

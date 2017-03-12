@@ -16,16 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let menuViewControoler = storyboard.instantiateViewController(withIdentifier: "menuViewControoler") as! MBMenuViewController
-        
-        let file = NSData(contentsOfFile: "Sample_Stock_Reponse")
-        if let path = Bundle.main.path(forResource: "Sample_Stock_Response", ofType: "json")
-        {
-            let jsonData = NSData(contentsOfFile: path)
-            let json = try! JSONSerialization.jsonObject(with: jsonData as! Data, options: []) as! NSDictionary
-        }
 
         return true
     }

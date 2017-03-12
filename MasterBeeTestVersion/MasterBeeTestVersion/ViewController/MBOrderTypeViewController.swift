@@ -32,14 +32,7 @@ class MBOrderTypeViewController: UIViewController {
     var eatnowButtonTitle = "Eat Now"
     var pickupButtonTitle = "Pick Up"
     var scheduledButtonTitled = "Scheduled Group Delivery"
-    
-    // static
-    /// should move this field to some helper class, and change MBOrderTypeViewController.xxx to SomeHelperClass.xxx
-    static let timespanHeaderString = "timespanHeader"
-    static let timespanHeaderNibNameString = "TimeSpanHeaderTableViewCell"
-    static let locationCellString = "locationCell"
-    static let locationTableViewCellString = "LocationTableViewCell"
-    
+
     // index
     var isPickerViewHidden = true
     
@@ -66,6 +59,9 @@ class MBOrderTypeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func eatNowButtonTapped(_ sender: UIButton) {
+
+    }
     
 }
 
@@ -74,13 +70,13 @@ extension MBOrderTypeViewController: UITableViewDelegate, UITableViewDataSource 
     func setupTableView () {
         scheduledGroupDeliveryTableView.delegate = self
         scheduledGroupDeliveryTableView.dataSource = self
-        scheduledGroupDeliveryTableView.register(UINib(nibName: MBOrderTypeViewController.timespanHeaderNibNameString, bundle: nil), forCellReuseIdentifier: MBOrderTypeViewController.timespanHeaderString)
-        scheduledGroupDeliveryTableView.register(UINib(nibName: MBOrderTypeViewController.locationTableViewCellString, bundle: nil), forCellReuseIdentifier: MBOrderTypeViewController.locationCellString)
+        scheduledGroupDeliveryTableView.register(UINib(nibName: MBStaticStrings.headerNibName, bundle: nil), forCellReuseIdentifier: MBStaticStrings.headerCellIdentifier)
+        scheduledGroupDeliveryTableView.register(UINib(nibName: MBStaticStrings.simpleCellNibName, bundle: nil), forCellReuseIdentifier: MBStaticStrings.simpleCellIdentifier)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MBOrderTypeViewController.locationCellString) as! LocationTableViewCell
-        cell.locationNameLabel.text = locations[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: MBStaticStrings.simpleCellIdentifier) as! SimpleTableViewCell
+        cell.cellLabel.text = locations[indexPath.row]
         return cell
     }
     
@@ -95,8 +91,8 @@ extension MBOrderTypeViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         for i in 0...timespans.count {
             if section == i {
-                let headerCell = tableView.dequeueReusableCell(withIdentifier: MBOrderTypeViewController.timespanHeaderString) as! TimeSpanHeaderTableViewCell
-                headerCell.timeSpanLabel.text = timespans[i]
+                let headerCell = tableView.dequeueReusableCell(withIdentifier: MBStaticStrings.headerCellIdentifier) as! HeaderTableViewCell
+                headerCell.cellLabel.text = timespans[i]
                 return headerCell.contentView
             }
         }

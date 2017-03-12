@@ -8,13 +8,17 @@
 
 import UIKit
 
-class LocationTableViewCell: UITableViewCell {
+class SimpleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        cellLabel.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,5 +26,5 @@ class LocationTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
