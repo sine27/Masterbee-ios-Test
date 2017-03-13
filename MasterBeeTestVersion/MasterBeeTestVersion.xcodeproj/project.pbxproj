@@ -13,6 +13,8 @@
 		2553860B1E723BAB007182F7 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255386091E723BAB007182F7 /* HeaderTableViewCell.swift */; };
 		2553860C1E723BAB007182F7 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553860A1E723BAB007182F7 /* HeaderTableViewCell.xib */; };
 		257712E31E74F2380059BCFC /* MBAppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257712E21E74F2380059BCFC /* MBAppConstants.swift */; };
+		257712E61E75EBA20059BCFC /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257712E41E75EBA20059BCFC /* MenuHeaderTableViewCell.swift */; };
+		257712E71E75EBA20059BCFC /* MenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257712E51E75EBA20059BCFC /* MenuHeaderTableViewCell.xib */; };
 		2591FADC1E70CF4900AC3868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2591FADB1E70CF4900AC3868 /* AppDelegate.swift */; };
 		2591FAE11E70CF4900AC3868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2591FADF1E70CF4900AC3868 /* Main.storyboard */; };
 		2591FAE31E70CF4900AC3868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2591FAE21E70CF4900AC3868 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		255386091E723BAB007182F7 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = View/HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		2553860A1E723BAB007182F7 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderTableViewCell.xib; path = View/HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		257712E21E74F2380059BCFC /* MBAppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MBAppConstants.swift; path = Helper/MBAppConstants.swift; sourceTree = "<group>"; };
+		257712E41E75EBA20059BCFC /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuHeaderTableViewCell.swift; path = View/MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		257712E51E75EBA20059BCFC /* MenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuHeaderTableViewCell.xib; path = View/MenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		2591FAD81E70CF4900AC3868 /* MasterBeeTestVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterBeeTestVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2591FADB1E70CF4900AC3868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2591FAE01E70CF4900AC3868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				25F2D7991E74D97600668E76 /* SimpleTableViewCell.xib */,
 				25F2D7851E73B49500668E76 /* MenuStockTableViewCell.swift */,
 				25F2D7861E73B49500668E76 /* MenuStockTableViewCell.xib */,
+				257712E41E75EBA20059BCFC /* MenuHeaderTableViewCell.swift */,
+				257712E51E75EBA20059BCFC /* MenuHeaderTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				255386041E7224D4007182F7 /* Sample_Stock_Response.json in Resources */,
 				2553860C1E723BAB007182F7 /* HeaderTableViewCell.xib in Resources */,
 				25F2D79B1E74D97600668E76 /* SimpleTableViewCell.xib in Resources */,
+				257712E71E75EBA20059BCFC /* MenuHeaderTableViewCell.xib in Resources */,
 				25F2D7881E73B49500668E76 /* MenuStockTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +596,7 @@
 				255386081E722C17007182F7 /* MBOrderTypeViewController.swift in Sources */,
 				2591FB141E70E34200AC3868 /* MasterBeeClient.swift in Sources */,
 				257712E31E74F2380059BCFC /* MBAppConstants.swift in Sources */,
+				257712E61E75EBA20059BCFC /* MenuHeaderTableViewCell.swift in Sources */,
 				25F2D78D1E749FCD00668E76 /* OtherHelper.swift in Sources */,
 				25F2D78F1E74A16600668E76 /* StockImageModel.swift in Sources */,
 				2553860B1E723BAB007182F7 /* HeaderTableViewCell.swift in Sources */,

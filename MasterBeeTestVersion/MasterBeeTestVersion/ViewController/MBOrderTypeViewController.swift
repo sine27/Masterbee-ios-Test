@@ -37,6 +37,7 @@ class MBOrderTypeViewController: UIViewController {
     var isPickerViewHidden = true
     
     var dateRowSelected = 0
+    var orderTypeIdentifier = -1
     
     let calendar = Calendar.current
     
@@ -60,7 +61,24 @@ class MBOrderTypeViewController: UIViewController {
     }
     
     @IBAction func eatNowButtonTapped(_ sender: UIButton) {
-
+        orderTypeIdentifier = 0
+        performSegue(withIdentifier: MBStaticStrings.orderTypeToMenu, sender: self)
+    }
+    
+    @IBAction func pickupButtonTapped(_ sender: Any) {
+        orderTypeIdentifier = 1
+        performSegue(withIdentifier: MBStaticStrings.orderTypeToMenu, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == MBStaticStrings.orderTypeToMenu {
+            let menuVC = segue.destination as! MBMenuViewController
+            if orderTypeIdentifier == -1 {
+                OtherHelper.alertMessage("Perform Segue", userMessage: "Failed! Order Type Identifier Error...", action: nil, sender: self)
+            } else {
+                menuVC.orderType = orderTypeIdentifier
+            }
+        }
     }
     
 }
@@ -70,7 +88,7 @@ extension MBOrderTypeViewController: UITableViewDelegate, UITableViewDataSource 
     func setupTableView () {
         scheduledGroupDeliveryTableView.delegate = self
         scheduledGroupDeliveryTableView.dataSource = self
-        scheduledGroupDeliveryTableView.register(UINib(nibName: MBStaticStrings.headerNibName, bundle: nil), forCellReuseIdentifier: MBStaticStrings.headerCellIdentifier)
+        scheduledGroupDeliveryTableView.register(UINib(nibName: MBStaticStrings.headerCellNibName, bundle: nil), forCellReuseIdentifier: MBStaticStrings.headerCellIdentifier)
         scheduledGroupDeliveryTableView.register(UINib(nibName: MBStaticStrings.simpleCellNibName, bundle: nil), forCellReuseIdentifier: MBStaticStrings.simpleCellIdentifier)
     }
     

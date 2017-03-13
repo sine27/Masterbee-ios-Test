@@ -20,7 +20,8 @@ class MenuModel: NSObject {
     var name: String!
     var dictionary: NSDictionary!
     
-    var stocks: [StockModel] = []
+    /** extra var for UI */
+    var stocks: [StockModel] = [] /* stocks that belongs to this menu */
     
     var locale: String?
     

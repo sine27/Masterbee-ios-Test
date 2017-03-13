@@ -15,19 +15,15 @@ class MenuStockTableViewCell: UITableViewCell {
     
     @IBOutlet weak var stockNameLabel: UILabel!
     
-    @IBOutlet weak var countInCartLabel: UILabel!
-    
-    @IBOutlet weak var minusButton: UIButton!
-    
     @IBOutlet weak var plusButton: UIButton!
     
     @IBOutlet weak var backgroundCardView: UIView!
     
-    @IBOutlet weak var buttonBackgroundView: UIView!
-    
     @IBOutlet weak var quantityTag: UIButton!
     
     @IBOutlet weak var priceTag: UIButton!
+    
+    @IBOutlet weak var countInCartButton: UIButton!
     
     var stock: StockModel! {
         didSet {
@@ -46,10 +42,11 @@ class MenuStockTableViewCell: UITableViewCell {
         backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundCardView.layer.shadowOpacity = 0.8
         
-        buttonBackgroundView.layer.cornerRadius = 5
-        buttonBackgroundView.layer.masksToBounds = true
-        buttonBackgroundView.layer.borderColor = UIColor.mbYellow.cgColor
-        buttonBackgroundView.layer.borderWidth = 1
+        plusButton.layer.cornerRadius = 3
+        plusButton.layer.masksToBounds = true
+        plusButton.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        plusButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        plusButton.layer.shadowOpacity = 0.5
         
         quantityTag.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         quantityTag.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -57,29 +54,35 @@ class MenuStockTableViewCell: UITableViewCell {
         priceTag.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         priceTag.layer.shadowOffset = CGSize(width: 0, height: 0)
         priceTag.layer.shadowOpacity = 0.5
-
+        
+        countInCartButton.isHidden = true
+        
     }
     
     override func prepareForReuse() {
         stockImageView.image = nil
+        countInCartButton.isHidden = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         //print(stock.dictionary)
     }
     
     private func updateMenuStockCell () {
         
         // Cache image
-        if let imageURL = stock.images?[0].image_url_xxl {
-            stockImageView.setImageWith(URLRequest(url: imageURL), placeholderImage: nil, success: { (request, response, image) in
-                self.stockImageView.image = image
-            }, failure: { (request, response, error) in
-                print("Stock Cell Image Load Failed: \(error.localizedDescription)")
-            })
+        if let images = stock.images, images != [] {
+            if let imageURL = images[0].image_url_xxl {
+                stockImageView.setImageWith(URLRequest(url: imageURL), placeholderImage: nil, success: { (request, response, image) in
+                    self.stockImageView.image = image
+                }, failure: { (request, response, error) in
+                    print("Stock Cell Image Load Failed: \(error.localizedDescription)")
+                })
+            }
         } else {
+            stockImageView.image = #imageLiteral(resourceName: "placeholder-image")
             print("NO IMAGE")
         }
         
@@ -98,15 +101,27 @@ class MenuStockTableViewCell: UITableViewCell {
             priceTag.setTitle("No Price", for: .normal)
             print("MenuStockCell: price is nil")
         }
-
+        
+        countInCartButton.setTitle(String(stock.countInCart), for: .normal)
+        if stock.countInCart > 0 {
+            countInCartButton.isHidden = false
+        }
     }
     
-    @IBAction func minusButtonTapped(_ sender: UIButton) {
-        
+    @IBAction func countInCartButtonTapped(_ sender: UIButton) {
+        stock.countInCart -= 1
+        countInCartButton.setTitle(String(stock.countInCart), for: .normal)
+        if stock.countInCart <= 0 {
+            countInCartButton.isHidden = true
+        }
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
-        
+        stock.countInCart += 1
+        countInCartButton.setTitle(String(stock.countInCart), for: .normal)
+        if stock.countInCart > 0 {
+            countInCartButton.isHidden = false
+        }
     }
     
 }

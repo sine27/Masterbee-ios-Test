@@ -50,6 +50,11 @@ class StockModel: NSObject {
     var images: [StockImageModel]?
     var temperature: String?
     
+    /** extra vars from UI: table row index */
+    var rowAt: IndexPath? /* IndexPath for MenuTable */
+    var indexPathAt: IndexPath? /* IndexPath for ContentTable, it should be an array of IndexPath if a single product has multiple menus */
+    var countInCart: Int = 0 /* count of orders put in cart */
+    
     init(dictionary: NSDictionary) {
         
         self.dictionary = dictionary
@@ -106,5 +111,7 @@ class StockModel: NSObject {
         } else {
             print("[StockModel] Error: nil temperature")
         }
+        
+        self.countInCart = 0
     }
 }
